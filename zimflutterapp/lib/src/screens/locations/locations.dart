@@ -27,16 +27,18 @@ class Locations extends StatelessWidget {
 
   Widget _itemBuilder(BuildContext context, Location location) {
     return GestureDetector(
-      child: Container(
-        child: Stack(
-          children: <Widget>[
-            ImageBanner(imagePath: location.imagePath, height: 245.0),
-            TileOverlay(location)
-          ],
+      child: Card(
+        elevation: 10.0,
+        child: Container(
+          child: Stack(
+            children: <Widget>[
+              ImageBanner(imagePath: location.imagePath, height: 245.0),
+              TileOverlay(location)
+            ],
+          ),
+          height: 245.0,
         ),
-        height: 245.0,
-
-        ),
+      ),
       onTap: () => _onLocationTap(context, location.id),
     );
   }
