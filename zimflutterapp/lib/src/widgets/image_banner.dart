@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ImageBanner extends StatelessWidget {
-  final String _imagePath;
+  final String imagePath;
+  final double height;
 
-  ImageBanner(this._imagePath);
+  ImageBanner({@required this.imagePath, this.height = 200.0});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +13,9 @@ class ImageBanner extends StatelessWidget {
         color: Colors.grey,
       ),
       constraints: BoxConstraints.expand(
-        height: 200.0,
+        height: height,
       ),
-      child: Image.asset(this._imagePath, fit: BoxFit.cover),
+      child: Image.asset(this.imagePath, fit: BoxFit.cover),
     );
   }
 }
